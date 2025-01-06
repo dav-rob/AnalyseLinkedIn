@@ -1,0 +1,128 @@
+Job Description:
+{{job_description}}
+
+Resume:
+dr@roseinternet.com
+David Roberts
+Software Manager
+London, UK +447539656601
+I offer a leadership style that balances clarity, efficiency and human connection, prioritizing creative problem-solving and a shared
+sense of purpose.
+Summary
+-
+Led the Investment Banking and Capital Markets (IBCM) New Vision mobile and desktop applications rollout
+- enabled faster compliance management and used AI to leverage social networks to improve senior banker's productivity.
+- Led a $5 million digital-transformation project. Spearheaded a collaborative 20-member team to create and launch an award-
+winning mobile and desktop application, recognized as the Financial Times as Best Mobile Application.
+- Managed complex projects in a dynamic environment, coordinating closely with business stakeholders to deliver success.
+- Led technical decision-making. Designed a CQRS system for seamless integration with our existing IT infrastructure.
+- Improved efficiency. Created a cross-team collaboration system using a JIRA, and saved $1 million by addressing contractor
+inefficiencies.
+- Led hiring decision-making. Promoted agile methodologies and test driven development (TDD) across the full stack, including
+front end apps and backend microservices restful APIs implemented in C#, Java and Node.js.
+- Focused on motivation and collaboration to build a culture of open communication and continuous learning to achieve ambitious
+milestones while fostering a proactive, goal-oriented team atmosphere.
+-
+Led the Investment Banking and Capital Markets (IBCM) move of key functions into a cloud computing environment:
+- Collaborated with AWS during the rapid adoption phase in IBCM, aligning architectural choices with business objectives,
+evaluating on-prem workloads for cloud migration and devising effective migration strategies
+- Established a cloud-native microservices architecture for scalability, resilience, and elasticity, setting up a secure four VPC
+environment using CloudFormation that served both in-house and contractor teams in integrated yet distinct spaces.
+- Prioritized clear communication, collaborating with contractors and internal developers to creating scripts for Continuous
+Integration and Deployment (CI/CD) using Bash and Ansible, coordinated through Harness deploying micro services.
+- Developed a robust DevOps culture, focusing on efficient development and deployment, successfully integrating contractors and
+developers in the cloud, cutting contractor onboarding costs, maintaining a resilient three-region, user-facing environment.
+- Navigated a nine-month security consultancy forum to achieve project objectives and comply with company policies in a
+changing security landscape.
+- Cooperated on SecOps with Operations team to access cloud propositions from Azure, AWS and Google.
+-
+Led a retail-to-residential conversion, managing contractors, architects, planners and solicitors.
+- Delivered a high-quality residential property on time and within budget.
+- Employed data analytics with Propertydata.com, Rightmove, and Zoopla to pinpoint promising opportunities.
+- Organised financial budgeting, risk assessments, and negotiations for key financial agreements, including bridging loans.
+- Learned Python, node.js and TypeScript, GraphQL, Linear Algebra, Kubernetes and K3s, kept up to speed on LLMs.
+-
+Led the Investment banking division (IBD) new infrastructure project for auditing Chinese Wall crossing communications:
+- Managed $2 million messaging infrastructure reboot for the Corporate Bank.
+- Hired key resources to work in the prestigious Corporate Bank which stretches across the "Chinese wall".
+- Created a strong security and auditing framework while innovating rapidly to create, a message passing infrastructure between
+the private Investment bank and the public capital markets teams.
+-
+Work experience
+Credit Suisse 2015-02 2020-01
+VP - IBCM New Vision Applications
+Credit Suisse 2016-05 2018-06
+VP - IBCM Cloud
+Entendior, London, UK 2020-01 2023-11
+Founder
+Credit Suisse 2014-11 2015-05
+IBD - VP Development Manager
+Credit Suisse 2012-11 2014-11
+CET - Development Manager
+Delivered a $1 million Client Enablement Tools (CET)workflow onboarding project for the Digital Bank initiative, improving
+contractor and employee onboarding lead-times.
+- Rectified a number of deep, technical difficulties that were limiting its uptake, with continuous improvement to the back end.
+- Created a non-hierarchical atmosphere of trust, promoting a junior developer to tech lead, to become an inspiring technical
+manager within a close-knit team atmosphere.
+- Liaised with stakeholders, travelling extensively, developing confidence and spreading the good news about the new project.
+-
+- Delivered the technical side of the $3 million dollar Client Management Tools (CMT) project, transforming a failed project into an
+in-demand success, using Spring MVC, Elastic, in a CQRS based distributed system.
+- Interviewed and hired 12 developers, forming a non-hierarchical team atmosphere of trust and contribution, to develop a team of
+leaders, in four time zones. Four of these team members went on to lead their own team.
+- Moved the in-house CRM application, from an isolated spreadsheet-like application to a sophisticated ElasticSearch data-driven
+architecture using Sencha to create an app deeply integrated into Outlook and financial analysis apps.
+-
+- Analysed, designed and developed the Sales Events Service, a Flex Based Events Calendar using Adobe Flash, offering a Google
+Calendar style UI, with advanced views for projects, and managers, and sophisticated query filters.
+- Learned ActionScript, which is a strongly typed version of ECMAScript similar to TypeScript for UI, used Java/Spring at the back
+end.
+- Generated a great deal of demand for custom views of events based data.
+-
+- Developed the new IG Index Sports and Financial spread betting site, which allows users to choose fixed, binary and spread
+betting odds types, working in a cross-functional role on middleware and front end technologies.
+-
+- Innovated, designed and built a web-based bond Book-Building application, using TreeGrid, an Excel-like JavaScript grid, which
+enabled GS Investment Bankers to easily collaborate with external banks and brokers.
+- Created a bespoke rules engine / workflow engine using Spring Framework to monitor and flag entries into the book.
+-
+- Used Spring Framework dependency injection to provide business logic and other services to the application, in combination with
+Hibernate D
+AOs to produce a highly configurable application.
+- Designed and developed reusable GUI components using JavaScript, Tapestry and Spring Webflow.
+-
+- Led the adoption of Spring Framework and Ajax technologies.
+- Implemented a maintainable Web2.0 application, using Spring and Ajax, for displaying web analytics.
+
+Credit Suisse 2010-08 2012-11
+CMT - Technical Lead
+Barclays Capital 2009-11 2010-12
+Senior Software Engineer - Sales Events
+IG Index 2008-06 2009-03
+Senior UX Developer
+Goldman Sachs 2007-01 2007-06
+Senior Java and Web Developer
+Algorithmics 2005-11 2006-12
+Senior Java Developer
+Touch Clarity 2004-11 2005-08
+
+Education
+- BA(hons) Physics, Oxford University
+Top Skills
+- Leadership, Fintech, Collaboration, Motivation, Project Management, Architecture, DevOps, Digital Transformation.
+Awards
+- Financial Times - Best Mobile Application
+Interests
+Music concerts, Music playing, Tech.
+
+Example:
+```json
+{{example_json_output}}
+```
+
+Instructions:  You are an experienced IT recruiter, recruiting at the mid-level manager level:
+
+1. Return a JSON object, under the section "Summary", that compares the job description of a role I'm hiring for under the "Job Description" section with the resume of the person I'm considering for the role, under the "Resume" section. Conduct an assessment of how well the candidate's qualifications match the job requirements. Provide a detailed analysis of the strengths and potential gaps in the candidate's profile relative to the position, and give a score out of ten.  Follow the format of the example file exactly but, of course, fill the details in with a different analysis for each comparision according to the merits of the degree of match or difference.
+
+
+

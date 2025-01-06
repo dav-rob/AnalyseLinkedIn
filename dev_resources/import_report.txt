@@ -1,0 +1,22 @@
+Third-Party Package Usage Report
+============================
+
+Direct Dependencies Found:
+----------------------
+
+jinja2:
+  • util/jinja_loader.py (line 1)
+
+llm:
+  • llm_analyser.py (line 3)
+
+selenium:
+  • selenium_scraper.py (line 7)
+  • load_cookies_in_file.py (line 2)
+
+sqlite_utils:
+  • datasette_load.py (line 1)
+
+webdriver_manager:
+  • selenium_scraper.py (line 8)
+  • load_cookies_in_file.py (line 3)

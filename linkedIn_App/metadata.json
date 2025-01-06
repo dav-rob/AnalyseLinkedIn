@@ -1,0 +1,15 @@
+{
+  "plugins": {
+    "datasette-auth-passwords": {
+      "admin_password_hash": {
+        "$env": "PASSWORD_HASH_1"
+      },
+      "actors": {
+        "admin": {
+          "id": "editor",
+          "name": "Admin User"
+        }
+      }
+    }
+  }
+}

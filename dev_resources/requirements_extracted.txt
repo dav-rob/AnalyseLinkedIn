@@ -1,0 +1,5 @@
+jinja2
+llm
+selenium
+sqlite_utils
+webdriver_manager

@@ -1,0 +1,11 @@
+permissions:
+  update-row:
+    id: editor
+  insert-row:
+    id: editor
+  delete-row:
+    id:
+      - editor
+      - root
+  set-not-interested:
+    id: editor

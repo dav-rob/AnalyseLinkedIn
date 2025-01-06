@@ -1,0 +1,20 @@
+Job Description:
+{{job_description}}
+
+Resume:
+{{CV}}
+
+Example:
+```json
+{{example_json_output}}
+```
+
+Instructions:
+
+1. Analyze the Job Description section and comprehensively extract all key industry-specific terms, technical skills, soft skills, technologies, qualifications, tools and jargon mentioned. Return the results as a JSON object, under the section "Job Description", with the categories 'key industry_specific_terms','technical_skills', 'soft_skills','technologies', 'qualifications','tools' and 'jargon' as shown in the Example section.
+
+2. Analyze the Resume section and comprehensively extract all key industry-specific terms, technical skills, soft skills, technologies, qualifications, tools and jargon mentioned. Return the results as a JSON object, under the section "Resume", with the categories 'key industry_specific_terms','technical_skills', 'soft_skills','technologies', 'qualifications','tools' and 'jargon' as shown in the Example section.
+
+3. Return a JSON object, under the section "Comparison", that compares each category in the "Job Description" JSON, to the categories in the "Resume" JSON, and gives a percentage match of the resume category to the job description category as shown in the Example section.
+
+4. Return a JSON object, under the section "overall", with one category "similarity", which gives a percentage match of the entire Resume to the entire Job Description as shown in the Example section.

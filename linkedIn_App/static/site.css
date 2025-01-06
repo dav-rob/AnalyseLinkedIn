@@ -1,0 +1,246 @@
+body {
+    font-family: Helvetica, sans-serif;
+    line-height: 1.4;
+    padding-bottom: 2em;
+}
+header, main, footer {
+    max-width: 1024px;
+    margin: 0 auto;
+}
+header {
+    /*border-bottom: 4px solid #0e0c82;*/
+    margin-bottom: 2em;
+}
+footer {
+    border-top: 2px solid #0e0c82;
+    padding-top: 0.5em;
+}
+.homepage h1 {
+    margin-bottom: 0;
+}
+.homepage pre {
+    white-space: pre-wrap;
+}
+.tagline {
+    font-size: 1.4em;
+    color: #0e0c82;
+    text-shadow: 1px 1px 3px rgba(14, 12, 130, 0.3);
+    margin: 0;
+}
+.datasette-logo {
+    width: 100%;
+    max-width: 400px;
+}
+a:link,
+a:visited,
+a:hover,
+a:focus,
+a:active {
+    color: blue;
+    text-decoration: none;
+}
+
+pre {
+    word-break: break-word;
+}
+
+header nav ul {
+    margin: 1em 0 0 0;
+    padding: 0;
+}
+header nav li {
+    float: left;
+    font-size: 0.9em;
+    list-style-type: none;
+    margin: 0;
+    padding: 0 2em 0 0;
+}
+header nav li:last-child {
+    padding-right: 0;
+}
+nav {
+    overflow: hidden;
+    margin-bottom: 2em;
+}
+nav .show-on-narrow {
+    display: none;
+}
+body.page main .content {
+    max-width: 800px;
+}
+.datasette-logo-small {
+    height: 1.5em;
+    display: inline-block;
+    padding-right: 2em;
+    vertical-align: middle;
+}
+body.page nav ul,
+body.page nav li {
+    float: none;
+    display: inline;
+    position: relative;
+    top: 1px;
+}
+body.page nav {
+    margin-bottom: 1em;
+}
+body.page header {
+    padding-top: 0.5em;
+}
+
+@media (max-width: 480px) {
+    nav .hide-on-narrow {
+        display: none;
+    }
+    nav .show-on-narrow {
+        display: inline;
+    }
+    header nav li {
+        padding-right: 1em;
+    }
+    body.page nav ul {
+        display: block;
+    }
+}
+
+.about {
+    width: 50%;
+}
+.datasette-video {
+    float: right;
+    width: 45%;
+    margin-left: 5%;
+    box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.35);
+    padding-bottom: 0.3em;
+}
+.datasette-video p {
+    margin: 0.3em 0.3em 0.3em 0;
+    text-align: center;
+}
+
+@media (max-width: 480px) {
+    .datasette-video {
+        float: none;
+        width: 95%;
+        display: block;
+        margin: 1em auto;
+    }
+    .about {
+        width: 100%;
+    }
+    body .two-col-wrapper {
+        display: block;
+    }
+}
+
+.use-cases {
+    clear: both;
+}
+.card svg {
+    max-width: 50px;
+    color: #0e0c82;
+}
+.card {
+    width: 33.3%;
+    box-sizing: border-box;
+    padding-right: 1em;
+    margin-top: 2em;
+    float: left;
+    text-align: center;
+}
+.card h2 {
+    font-size: 1.1em;
+}
+.card p {
+    text-align: left;
+    font-size: 0.8em;
+}
+
+span.by {
+    color: #999;
+    font-size: 0.85em;
+}
+
+.substack iframe {
+    float: right;
+    border: 1px solid #EEE;
+    background:white;
+    margin-right: -224px;
+}
+@media (max-width: 1024px) {
+    .substack {
+        text-align: center;
+    }
+    .substack iframe {
+        float: none;
+        max-width: 100%;
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 640px) {
+    .card {
+        float: none;
+        width: 100%;
+    }
+}
+
+
+.two-col-wrapper {
+    display: flex;
+}
+.two-col-column {
+    flex: 1;
+}
+.two-col-column:first-of-type {
+    padding-right: 1em;
+}
+
+.github-corner:hover .octo-arm{
+    animation:octocat-wave 560ms ease-in-out
+}
+@keyframes octocat-wave {
+    0%,100% {
+        transform:rotate(0)
+    }
+    20%,60% {
+        transform:rotate(-25deg)
+    }
+    40%,80% {
+        transform:rotate(10deg)
+    }
+}
+@media (max-width:500px) {
+    .github-corner:hover .octo-arm {
+        animation: none
+    }
+    .github-corner .octo-arm{
+        animation: octocat-wave 560ms ease-in-out
+    }
+}
+
+.beta-search {
+    margin-bottom: 1em;
+}
+.beta-search input {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    padding: 9px 4px;
+    margin-right: 1em;
+}
+.beta-search input[type="submit"] {
+    color: #fff;
+    background-color: #8484f4;
+    border-color: #0e0c82;
+    -webkit-appearance: button;
+    font-weight: 400;
+    cursor: pointer;
+    text-align: center;
+    vertical-align: middle;
+    border-width: 1px;
+    border-style: solid;
+    padding: .4em 0.8em;
+    font-size: 0.9rem;
+    line-height: 1;
+    border-radius: .25rem;
+}

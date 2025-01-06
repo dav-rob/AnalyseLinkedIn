@@ -1,0 +1,44 @@
+# Virtual environment
+myenv/
+.venv/
+
+# Compiled Python files
+__pycache__/
+*.py[cod]
+
+# Environment variables
+api.env
+
+# Exclude everything within the cookies directory
+/cookies/*
+# Re-include the cookies directory itself
+!/cookies
+
+
+# Logs
+*.log
+
+# Cache files
+/jupyter/.ipynb_checkpoints/
+
+# Distribution / Packaging
+dist/
+build/
+jobchain.egg-info/
+
+
+# IDE-specific files
+.vscode/
+.idea/
+
+
+# Test coverage reports
+htmlcov/
+.tox/
+.nox/
+
+# macOS-specific files
+.DS_Store
+
+# temporary files
+temp/

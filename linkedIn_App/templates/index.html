@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <title>LinkedIn Analysis: Analyse LinkedIn Job Descriptions Your Way</title>
+  <link rel="stylesheet" type="text/css" href="/static/site.css">
+  <link rel="stylesheet" href="/static/lite-yt-embed.css" />
+</head>
+<body class="homepage">
+  <header>
+    <nav>
+      {% include "_nav_links.html" %}
+    </nav>
+  </header>
+  {% block content %}
+      <h1>Welcome to Datasette</h1>
+
+      {% if can_set_not_interested %}
+          <div class="not-interested-section">
+              <h2>Not Interested Options</h2>
+              <p>You have permission to mark items as "not interested".</p>
+              <!-- Add your "not interested" functionality here -->
+          </div>
+      {% endif %}
+
+      <!-- Rest of your index page content -->
+  {% endblock %}
+</body>
+</html>

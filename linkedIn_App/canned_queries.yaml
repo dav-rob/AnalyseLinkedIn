@@ -1,0 +1,17 @@
+databases:
+  my_database_4:
+    queries:
+      just_jobId:
+        sql: |-
+          SELECT 
+            job_id
+          from jobs
+      keywords:
+        sql: |-
+          SELECT 
+              job_id,
+              json_extract(analysis, '$."Job Description".key_industry_specific_terms') AS jd_key_industry_specific_terms,
+              json_extract(analysis, '$.Resume.key_industry_specific_terms') AS resume_key_industry_specific_terms,
+              json_extract(analysis, '$.Comparison.key_industry_specific_terms') AS compare_key_industry_specific_terms,
+              json_extract(analysis, '$.Overall.similarity') AS overall_similarity
+          FROM jobs;
