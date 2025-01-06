@@ -1,5 +1,13 @@
 # LinkedIn Analyzer Documentation
 
+## Installation
+
+To install the requirements, run the following command:
+
+```bash
+pip install -r requirements.txt
+```
+
 ## Running The Analyzer
 
 To run the analyzer, login to LinkedIn and go here https://www.linkedin.com/jobs/, put in the role and location you're interested in. Then paste the url of the search page into the command line below:

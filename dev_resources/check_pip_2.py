@@ -1,7 +1,8 @@
 import importlib.metadata
 
 # For installed packages show the package and version
-packages = ["pytest", "psutil","pytest-asyncio"]
+packages = ["jinja2", "llm", "selenium", "sqlite_utils", "webdriver_manager"]
+
 
 for package in packages:
     try:

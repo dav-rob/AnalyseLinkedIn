@@ -1,0 +1,5 @@
+jinja2>=3.1.5
+llm>=0.19.1
+selenium>=4.27.1
+sqlite_utils>=3.38
+webdriver_manager>=4.0.2
