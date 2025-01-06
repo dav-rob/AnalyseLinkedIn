@@ -1,12 +1,21 @@
 # LinkedIn Analyzer Documentation
 
 ## Installation
-
 To install the requirements, run the following command:
 
 ```bash
 pip install -r requirements.txt
 ```
+
+## Cookie Saving
+To save cookies, run the following command:
+
+```bash
+python load_cookies_in_file.py
+```
+## api.env
+To create a file called api.env, copy the contents of api.env.example and replace the values with your own.
+
 
 ## Running The Analyzer
 

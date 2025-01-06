@@ -7,7 +7,7 @@ from util.jinja_loader import get_jinja_prompt
 
 
 def analyse_role_desc(role_array):
-    api_key = get_env_key('OPEN_AI_API_KEY')
+    api_key = get_env_key('OPENAI_API_KEY')
     # gpt-4o context length is 128,000
     #   its default maximum number of output tokens (completion tokens) is typically limited to 4,096 tokens
     model = llm.get_model("gpt-4o")
