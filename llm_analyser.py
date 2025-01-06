@@ -13,9 +13,9 @@ def analyse_role_desc(role_array):
     model = llm.get_model("gpt-4o")
     model.key = api_key
     counter = 1
-    #for job in jobs_array:
-    for i in range(4):
-        role = role_array[i]
+    for role in role_array:
+    # for i in range(4):
+    #     role = role_array[i]
         role_desc = role["job_desc_txt"]
         example_json = load_example_json()
         prompt_txt = get_jinja_prompt("job_desc.txt", role_desc, example_json)

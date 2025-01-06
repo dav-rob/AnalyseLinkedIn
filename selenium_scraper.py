@@ -91,9 +91,9 @@ def click_job_card_get_info(driver, jobs_list_el_array):
     jobs_json = {"jobs_array": []}
     print(f"Found {len(jobs_list_el_array)} job elements")
     
-    #for job_link_el in jobs_list_el_array:
-    for i in range(4):
-        job_link_el = jobs_list_el_array[i]
+    for job_link_el in jobs_list_el_array:
+    # for i in range(4):
+    #     job_link_el = jobs_list_el_array[i]
         try:
             print("Processing job listing...")
             # Try multiple selectors for job ID
