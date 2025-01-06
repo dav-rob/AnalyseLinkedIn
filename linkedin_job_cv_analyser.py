@@ -1,17 +1,17 @@
 import argparse
 
-from datasette_load import add_to_datasette
 from llm_analyser import analyse_role_desc
 from selenium_scraper import get_job_description_array
+from sqlite_load import add_to_sqlite
 from util.log_utils import print_array
 
 
 def analyse_job_posts(url):
     scraped_jobs_array = get_job_description_array(url)
     # print_array(scraped_jobs_array)
-    # analyse_role_desc(scraped_jobs_array)
+    analyse_role_desc(scraped_jobs_array)
     # print(scraped_jobs_array)
-    # add_to_datasette(scraped_jobs_array)
+    add_to_sqlite(scraped_jobs_array)
 
 
 if __name__ == "__main__":

@@ -7,7 +7,7 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 from webdriver_manager.chrome import ChromeDriverManager
 
-from datasette_load import job_id_in_database
+from sqlite_load import job_id_in_database
 
 # from env_loader import get_env_key #use for loading username/password which is deprecated
 

@@ -4,7 +4,7 @@ from util.file_utils import create_incremented_filename
 
 db=None
 
-def add_to_datasette(jobs_array):
+def add_to_sqlite(jobs_array):
     global db
     connect_to_db()
     for json_data in jobs_array:
