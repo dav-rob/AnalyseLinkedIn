@@ -8,13 +8,16 @@ pip install -r requirements.txt
 ```
 
 ## Cookie Saving
-To save cookies, run the following command:
+To enable seamless login by saving your cookies, run the following command, then login to LinkedIn in your usual way:
 
 ```bash
 python load_cookies_in_file.py
 ```
+
+The cookies will be saved to a file called cookies/linkedin_cookies.json.
+
 ## api.env
-To create a file called api.env, copy the contents of api.env.example and replace the values with your own.
+Create a file called api.env, by copying the contents of api.env.example and replace the values with your own.
 
 
 ## Running The Analyzer
