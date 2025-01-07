@@ -2,22 +2,23 @@ import argparse
 
 from jobchain.job_chain import JobChainFactory
 
-from llm_analyser import analyse_role_desc
-from selenium_scraper import get_job_description_array
-from sqlite_load import add_to_sqlite
-from util.log_utils import print_array
+# from llm_analyser import analyse_role_desc
+# from selenium_scraper import get_job_description_array
+# from sqlite_load import add_to_sqlite
+# from util.log_utils import print_array
 
-JobChainFactory()
+
 
 
 def analyse_job_posts(url):
-    print(JobChainFactory.getInstance().get_job_names())
+    print(JobChainFactory.get_instance().get_job_names())
     # scraped_jobs_array = get_job_description_array(url)
     # analyse_role_desc(scraped_jobs_array)
     # add_to_sqlite(scraped_jobs_array)
 
 
 if __name__ == "__main__":
+    JobChainFactory.init()
     # Set up the argument parser
     parser = argparse.ArgumentParser(description='Extract job description from a LinkedIn job page using Selenium.')
     parser.add_argument('url', type=str, help='The URL of the LinkedIn job page.')
@@ -28,11 +29,6 @@ if __name__ == "__main__":
         print("[WARNING] URL appears to be truncated. Please wrap the URL in quotes when running the script:")
         print('python linkedin_job_cv_analyser.py "YOUR_FULL_URL_HERE"')
         print("\nFor example:")
-        print('python linkedin_job_cv_analyser.py "https://www.linkedin.com/jobs/search/?distance=25&geoId=101165590&keywords=engineering%20manager"')
-        exit(1)
-        
-    print(f"[MAIN] Raw URL from args: {args.url}")
-    analyse_job_posts(args.url)
         print('python linkedin_job_cv_analyser.py "https://www.linkedin.com/jobs/search/?distance=25&geoId=101165590&keywords=engineering%20manager"')
         exit(1)
         
