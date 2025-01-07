@@ -11,14 +11,16 @@ from jobchain.job_chain import JobChainFactory
 
 
 def analyse_job_posts(url):
-    print(JobChainFactory.get_instance().get_job_names())
+    print("**************" + str(JobChainFactory.get_instance().get_job_names()) + "**************")
+    JobChainFactory.get_instance().mark_input_completed()
     # scraped_jobs_array = get_job_description_array(url)
     # analyse_role_desc(scraped_jobs_array)
     # add_to_sqlite(scraped_jobs_array)
 
 
 if __name__ == "__main__":
-    JobChainFactory.init()
+    # Initialize JobChainFactory
+    JobChainFactory()
     # Set up the argument parser
     parser = argparse.ArgumentParser(description='Extract job description from a LinkedIn job page using Selenium.')
     parser.add_argument('url', type=str, help='The URL of the LinkedIn job page.')
