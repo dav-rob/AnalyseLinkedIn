@@ -1,26 +1,18 @@
 import argparse
 
-from jobchain.job_chain import JobChainFactory
-
-# from llm_analyser import analyse_role_desc
-# from selenium_scraper import get_job_description_array
-# from sqlite_load import add_to_sqlite
-# from util.log_utils import print_array
-
-
+from llm_analyser import analyse_role_desc
+from selenium_scraper import get_job_description_array
+from sqlite_load import add_to_sqlite
+from util.log_utils import print_array
 
 
 def analyse_job_posts(url):
-    print("**************" + str(JobChainFactory.get_instance().get_job_names()) + "**************")
-    JobChainFactory.get_instance().mark_input_completed()
-    # scraped_jobs_array = get_job_description_array(url)
-    # analyse_role_desc(scraped_jobs_array)
-    # add_to_sqlite(scraped_jobs_array)
+    scraped_jobs_array = get_job_description_array(url)
+    analyse_role_desc(scraped_jobs_array)
+    #add_to_sqlite(scraped_jobs_array)
 
 
 if __name__ == "__main__":
-    # Initialize JobChainFactory
-    JobChainFactory()
     # Set up the argument parser
     parser = argparse.ArgumentParser(description='Extract job description from a LinkedIn job page using Selenium.')
     parser.add_argument('url', type=str, help='The URL of the LinkedIn job page.')
