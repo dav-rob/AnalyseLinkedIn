@@ -1,17 +1,20 @@
 import json
 
 import llm
+from jobchain.job_chain import JobChain
 
 from util.env_loader import get_env_key
 from util.jinja_loader import get_jinja_prompt
 
+jobchain: JobChain = None
 
 def analyse_role_desc(role_array):
+    jobchain = JobChain(result_processing_function=add_to_sqlite)
     api_key = get_env_key('OPENAI_API_KEY')
     # gpt-4o context length is 128,000
     #   its default maximum number of output tokens (completion tokens) is typically limited to 4,096 tokens
-    model = llm.get_model("gpt-4o")
-    model.key = api_key
+    # model = llm.get_model("gpt-4o")
+    # model.key = api_key
     counter = 1
     for role in role_array:
     # for i in range(4):
@@ -22,13 +25,19 @@ def analyse_role_desc(role_array):
         print(
             f"{counter}) --------------------------------------------------------------------------------------------------------------------------")
         counter += 1
-        response = model.prompt(prompt_txt, temperature=0.7, system="You are an expert job description analyzer, " \
-                                                                    "who writes a comprehensive description of job keywords.")
-        response_str = str(response)
-        stripped_response = response_str.strip("`json")
-        #print(stripped_response)
-        analysis = deserialize_json_safely(stripped_response)
-        role["analysis"] = analysis
+        jobchain.submit_task({"prompt": prompt_txt})
+        # response = model.prompt(prompt_txt, temperature=0.7, system="You are an expert job description analyzer, " \
+        #                                                             "who writes a comprehensive description of job keywords.")
+        # response_str = str(response)
+        # stripped_response = response_str.strip("`json")
+        # #print(stripped_response)
+        # analysis = deserialize_json_safely(stripped_response)
+        # role["analysis"] = analysis
+    jobchain.mark_input_completed()
+
+def add_to_sqlite(result:dict):
+    response = result["response"]
+    print(response)
 
 
 def load_example_json():
@@ -67,3 +76,4 @@ def get_error_json(e):
         "error": f"{{{error_message}}}"
     }
     return json_object
+
