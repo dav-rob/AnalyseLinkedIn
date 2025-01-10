@@ -3,6 +3,7 @@ import json
 import llm
 from jobchain.job_chain import JobChain
 
+from jobchain.jobs.llm_jobs import OpenAIJob
 from util.env_loader import get_env_key
 from util.jinja_loader import get_jinja_prompt
 
