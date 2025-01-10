@@ -38,7 +38,8 @@ def analyse_role_desc(role_array):
 
 def add_to_sqlite(result:dict):
     response = result["response"]
-    print(response)
+    print(str(response)[:50])
+
 
 
 def load_example_json():
