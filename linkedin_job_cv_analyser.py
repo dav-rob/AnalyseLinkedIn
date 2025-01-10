@@ -5,6 +5,7 @@ from selenium_scraper import get_job_description_array
 from sqlite_load import add_to_sqlite
 from util.log_utils import print_array
 
+#TODO: get a sample of ten different CVs and find which one matches best with the 100's of job description
 
 def analyse_job_posts(url):
     scraped_jobs_array = get_job_description_array(url)
