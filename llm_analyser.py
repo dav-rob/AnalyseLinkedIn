@@ -16,19 +16,28 @@ def analyse_role_desc(role_array):
     for role in role_array:
     # for i in range(4):
     #     role = role_array[i]
-        role_desc = role["job_desc_txt"]
-        example_json = load_example_json()
-        prompt_txt = get_jinja_prompt("job_desc.txt", role_desc, example_json)
+        prompt_txt:str = generate_prompt(role)
         print(
-            f"{counter}) --------------------------------------------------------------------------------------------------------------------------")
+                f"{counter}) --------------------------------------------------------------------------------------------------------------------------")
         counter += 1
         response = model.prompt(prompt_txt, temperature=0.7, system="You are an expert job description analyzer, " \
-                                                                    "who writes a comprehensive description of job keywords.")
-        response_str = str(response)
-        stripped_response = response_str.strip("`json")
-        #print(stripped_response)
-        analysis = deserialize_json_safely(stripped_response)
-        role["analysis"] = analysis
+                                                                        "who writes a comprehensive description of job keywords.")
+        add_analysis(response, role)
+
+
+def add_analysis(response, role):
+    response_str = str(response)
+    stripped_response = response_str.strip("`json")
+    # print(stripped_response)
+    analysis = deserialize_json_safely(stripped_response)
+    role["analysis"] = analysis
+
+
+def generate_prompt(role):
+    role_desc = role["job_desc_txt"]
+    example_json = load_example_json()
+    prompt_txt = get_jinja_prompt("job_desc.txt", role_desc, example_json)
+    return prompt_txt
 
 
 def load_example_json():
