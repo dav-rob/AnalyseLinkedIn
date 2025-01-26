@@ -1,7 +1,16 @@
-Job Description:
-{{job_description}}
+<Instructions>  
+You are an experienced IT recruiter, recruiting at the mid-level manager level:
 
-Resume:
+1. Return a JSON object. Under the key "Summary" compare the job description of a role I'm hiring for under the <Job Description> section with the resume of the person I'm considering for the role, under the <Resume> section. Conduct an assessment of how well the candidate's qualifications match the job requirements. Provide a detailed analysis of the strengths and potential gaps in the candidate's profile relative to the position, and give a score out of ten.  Follow the format of the <Example> section exactly but, of course, fill the details in with a different analysis for each role comparison according to the merits of the degree of match.
+</Instructions>
+
+
+
+<Job Description>
+{{job_description}}
+</Job Description>
+
+<Resume>
 dr@roseinternet.com
 David Roberts
 Software Manager
@@ -114,15 +123,12 @@ Awards
 - Financial Times - Best Mobile Application
 Interests
 Music concerts, Music playing, Tech.
+</Resume>
 
-Example:
+
+<Example>
 ```json
 {{example_json_output}}
 ```
-
-Instructions:  You are an experienced IT recruiter, recruiting at the mid-level manager level:
-
-1. Return a JSON object, under the section "Summary", that compares the job description of a role I'm hiring for under the "Job Description" section with the resume of the person I'm considering for the role, under the "Resume" section. Conduct an assessment of how well the candidate's qualifications match the job requirements. Provide a detailed analysis of the strengths and potential gaps in the candidate's profile relative to the position, and give a score out of ten.  Follow the format of the example file exactly but, of course, fill the details in with a different analysis for each comparision according to the merits of the degree of match or difference.
-
-
+</Example>
 
