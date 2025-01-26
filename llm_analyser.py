@@ -3,6 +3,7 @@ import json
 import llm
 
 from jobchain import JobABC
+from sqlite_load import add_to_sqlite
 from util.env_loader import get_env_key
 from util.jinja_loader import get_jinja_prompt
 
@@ -26,10 +27,10 @@ def analyse_role_desc(role_array):
         add_analysis(response, role)
 
 def jobchain_result_processor(result:dict):
-    submitted_task = result[JobABC.TASK_PASSTHROUGH_KEY]
-    prompt = submitted_task["prompt"]
+    submitted_task = result.pop(JobABC.TASK_PASSTHROUGH_KEY)
     role = submitted_task["role"]
-    add_analysis(result, role)
+    llm_analysis = result["response"]
+    add_analysis(llm_analysis, role)
 
 def add_analysis(response, role):
     response_str = str(response)
@@ -37,6 +38,8 @@ def add_analysis(response, role):
     # print(stripped_response)
     analysis = deserialize_json_safely(stripped_response)
     role["analysis"] = analysis
+    role_array = [role]
+    add_to_sqlite(role_array)
 
 
 def generate_prompt(role):
