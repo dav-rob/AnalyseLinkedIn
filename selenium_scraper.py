@@ -26,6 +26,7 @@ def get_job_description_array(url):
     :param url: the linkedIn Jobs Search page particular to each person searching
     :return: an array of job descriptions from the LinkedIn Jobs Search page.
     """
+    global jobchain
     if not jobchain:
         jobchain = JobChain(result_processing_function=jobchain_result_processor)
     driver = configure_driver()
