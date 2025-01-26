@@ -259,7 +259,7 @@ def click_job(driver, job_id, job_link_el, jobs_json):
         print(f"Successfully processed job: {job_title} at company: {company}")
         print("---------------------------------------------------")
         prompt = generate_prompt(single_job_json)
-        jobchain.submit_task({"prompt": prompt})
+        jobchain.submit_task({"prompt": prompt, "role": single_job_json})
 
 
 def text_for_array_of_el(elements):
