@@ -1,13 +1,18 @@
 import json
 import time
 
+from jobchain.job_chain import JobChain
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 from webdriver_manager.chrome import ChromeDriverManager
 
+from llm_analyser import generate_prompt, jobchain_result_processor
 from sqlite_load import job_id_in_database
+
+jobchain: JobChain = None
+roles = {}
 
 # from env_loader import get_env_key #use for loading username/password which is deprecated
 
@@ -21,6 +26,8 @@ def get_job_description_array(url):
     :param url: the linkedIn Jobs Search page particular to each person searching
     :return: an array of job descriptions from the LinkedIn Jobs Search page.
     """
+    if not jobchain:
+        jobchain = JobChain(result_processing_function=jobchain_result_processor)
     driver = configure_driver()
     login(driver)
     # Open the LinkedIn URL passed in by command line parameters
@@ -46,6 +53,7 @@ def get_job_description_array(url):
     # Click on each element and extract the job description
     jobs_desc_array = click_job_card_get_info(driver, jobs_before_scrolling)
     # end program.
+    jobchain.mark_input_completed()
     driver.quit()
     return jobs_desc_array
 
@@ -249,6 +257,8 @@ def click_job(driver, job_id, job_link_el, jobs_json):
         jobs_json["jobs_array"].append(single_job_json)
         print(f"Successfully processed job: {job_title} at company: {company}")
         print("---------------------------------------------------")
+        prompt = generate_prompt(single_job_json)
+        jobchain.submit_task({"prompt": prompt})
 
 
 def text_for_array_of_el(elements):

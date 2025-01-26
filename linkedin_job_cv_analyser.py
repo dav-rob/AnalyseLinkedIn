@@ -8,8 +8,8 @@ from util.log_utils import print_array
 
 def analyse_job_posts(url):
     scraped_jobs_array = get_job_description_array(url)
-    analyse_role_desc(scraped_jobs_array)
-    add_to_sqlite(scraped_jobs_array)
+    #analyse_role_desc(scraped_jobs_array)
+    #add_to_sqlite(scraped_jobs_array)
 
 
 if __name__ == "__main__":

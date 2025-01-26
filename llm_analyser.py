@@ -2,6 +2,7 @@ import json
 
 import llm
 
+from jobchain import JobABC
 from util.env_loader import get_env_key
 from util.jinja_loader import get_jinja_prompt
 
@@ -24,6 +25,11 @@ def analyse_role_desc(role_array):
                                                                         "who writes a comprehensive description of job keywords.")
         add_analysis(response, role)
 
+def jobchain_result_processor(result:dict):
+    submitted_task = result[JobABC.TASK_PASSTHROUGH_KEY]
+    prompt = submitted_task["prompt"]
+    role = submitted_task["role"]
+    add_analysis(result, role)
 
 def add_analysis(response, role):
     response_str = str(response)
