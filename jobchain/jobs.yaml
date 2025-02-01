@@ -1,3 +1,30 @@
+claud3_5_haiku:
+  type: OpenAIJob
+  properties:
+    client: 
+      base_url: "https://openrouter.ai/api/v1"
+      api_key: "OPENROUTER_API_KEY"  
+    api: 
+      model: "anthropic/claude-3.5-haiku"
+      temperature: 0.7
+    rate_limit:
+      max_rate: 15
+      time_period: 1
+
+
+gemini2_llm:
+  type: OpenAIJob
+  properties:
+    client: 
+      base_url: "https://openrouter.ai/api/v1"
+      api_key: "OPENROUTER_API_KEY"  
+    api: 
+      model: "google/gemini-2.0-flash-exp:free"
+      temperature: 0.7
+    rate_limit:
+      max_rate: 15
+      time_period: 1
+
 deepseek_llm:
   type: OpenAIJob
   properties:
