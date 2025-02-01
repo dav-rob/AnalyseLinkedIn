@@ -1,5 +1,6 @@
 import json
 
+import jobchain.jc_logging as logging
 import llm
 
 from jobchain import JobABC
@@ -7,6 +8,7 @@ from sqlite_load import add_to_sqlite
 from util.env_loader import get_env_key
 from util.jinja_loader import get_jinja_prompt
 
+logger = logging.getLogger(__name__)
 
 def analyse_role_desc(role_array):
     api_key = get_env_key('OPENAI_API_KEY')
@@ -29,6 +31,9 @@ def analyse_role_desc(role_array):
 def jobchain_result_processor(result:dict):
     submitted_task = result.pop(JobABC.TASK_PASSTHROUGH_KEY)
     role = submitted_task["role"]
+    if result.get("error"):
+        logger.error(f"Error returned by LLM: {result['error']}")
+        raise Exception(result['error'])
     llm_analysis = result["response"]
     add_analysis(llm_analysis, role)
 
