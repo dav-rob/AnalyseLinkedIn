@@ -72,13 +72,13 @@ def deserialize_json_safely(raw_string):
     :return:
     """
     try:
-        json_return = json.loads(raw_string)
+        json_return = json.dumps(raw_string, indent=2)
     except json.JSONDecodeError as e:
-        print(f"Error decoding JSON: {e}")
-        json_return = get_error_json(e)
+        logger.error(f"Error decoding JSON: {e}")
+        raise e
     except Exception as e:
-        print(f"An unexpected error occurred: {e}")
-        json_return = get_error_json(e)
+        logger.error(f"An unexpected error occurred: {e}")
+        raise e
     return json_return
 
 
