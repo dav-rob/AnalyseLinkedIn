@@ -1,4 +1,5 @@
 import json
+import re
 
 import jobchain.jc_logging as logging
 import llm
@@ -72,7 +73,8 @@ def deserialize_json_safely(raw_string):
     :return:
     """
     try:
-        json_return = json.dumps(raw_string, indent=2)
+        clean_string = clean_json_string(raw_string)
+        json_return = json.loads(clean_string)
     except json.JSONDecodeError as e:
         logger.error(f"Error decoding JSON: {e}")
         raise e
@@ -81,6 +83,10 @@ def deserialize_json_safely(raw_string):
         raise e
     return json_return
 
+def clean_json_string(json_str):
+    # Remove all control characters except whitespace
+    json_str = re.sub(r'[\x00-\x1f\x7f-\x9f]', '', json_str)
+    return json_str
 
 def get_error_json(e):
     error_message = str(e)
