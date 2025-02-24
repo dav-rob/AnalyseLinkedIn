@@ -1,3 +1,4 @@
+import datetime
 import json
 import re
 
@@ -35,7 +36,7 @@ def jobchain_result_processor(result:dict):
     if result.get("error"):
         logger.error(f"Error returned by LLM: {result['error']}")
         raise Exception(result['error'])
-    llm_analysis = result["response"]
+    llm_analysis = result["result"]
     add_analysis(llm_analysis, role)
 
 def add_analysis(response, role):
@@ -43,7 +44,8 @@ def add_analysis(response, role):
     stripped_response = response_str.strip("`json")
     # print(stripped_response)
     analysis = deserialize_json_safely(stripped_response)
-    role["analysis"] = analysis
+    role["analysis"] = analysis #{"Summary": analysis}
+    role["created_date"] = datetime.datetime.utcnow() 
     role_array = [role]
     add_to_sqlite(role_array)
 

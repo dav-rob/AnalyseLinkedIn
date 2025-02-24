@@ -1,8 +1,5 @@
-{
-  "Summary": {
-    "match_score": *** score from 1 to 10 for degree of match between resume and job description ***,
+
+    "match_score": *** score from 0 to 10, one decimal place, for degree of match between resume and job description, do not be overly generous this is the future of your project that is at stake, a low score (3 or 4) does not mean a bad match, just that it's not a good one, a high score (over 8.8) is almost perfect. ***,
     "strengths": [*** list five to ten strengths ***],
     "gaps": [*** list five to ten gaps ***],
     "detailed_analysis": "*** Provide a detailed analysis of the strengths and potential gaps in the candidate's profile relative to the position, do not be overly generous this is the future of your project that is at stake, so say if there isn't much chance of a good match, but if it seems like a good match then say so. ***"
-  }
-}

@@ -7,6 +7,7 @@ claud3_5_haiku:
     api: 
       model: "anthropic/claude-3.5-haiku"
       temperature: 0.7
+      response_format: "JobAnalysis"
     rate_limit:
       max_rate: 15
       time_period: 1
@@ -44,6 +45,21 @@ openai_llm:
     api:
       model: "$model"
       temperature: 0.7
+      response_format: "JobAnalysis"
     rate_limit:
       max_rate: 1
+      time_period: 2
+
+openai_openrouter:
+  type: OpenAIJob
+  properties:
+    client: 
+      base_url: "https://openrouter.ai/api/v1"
+      api_key: "OPENROUTER_API_KEY"  
+    api:
+      model: "$model"
+      temperature: 0.7
+      response_format: "JobAnalysis"
+    rate_limit:
+      max_rate: 10
       time_period: 1

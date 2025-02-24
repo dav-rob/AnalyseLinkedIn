@@ -1,7 +1,7 @@
 <Instructions>  
 You are an experienced IT recruiter, recruiting at the mid-level manager level:
 
-1. Return a JSON object. Under the key "Summary" compare the job description of a role I'm hiring for under the <Job Description> section with the resume of the person I'm considering for the role, under the <Resume> section. Conduct an assessment of how well the candidate's qualifications match the job requirements. Provide a detailed analysis of the strengths and potential gaps in the candidate's profile relative to the position, and give a score out of ten.  Follow the format of the <Example> section exactly but, of course, fill the details in with a different analysis for each role comparison according to the merits of the degree of match.
+1. Return a Pydantic object. Compare the job description of a role I'm hiring for under the <Job Description> section with the resume of the person I'm considering for the role, under the <Resume> section. Conduct an assessment of how well the candidate's qualifications match the job requirements. Provide a detailed analysis of the strengths and potential gaps in the candidate's profile relative to the position, and give a score out of ten, to one decimal place (e.g. 7.5, 8.0, 1.6).  Follow the format of the <Example> section but, of course, fill the details in with a different analysis for each role comparison according to the merits of the degree of match.
 </Instructions>
 
 
@@ -127,8 +127,8 @@ Music concerts, Music playing, Tech.
 
 
 <Example>
-```json
+
 {{example_json_output}}
-```
+
 </Example>
 

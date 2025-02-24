@@ -1,4 +1,6 @@
 single_stage:
     params1:
-        ask_llm:
+        openai_llm:
+          - model: "gpt-4o"
+        openai_openrouter:
           - model: "gpt-4o"
